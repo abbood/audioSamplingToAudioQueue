@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #include <AudioToolbox/AudioToolbox.h>
-#include <CoreServices/CoreServices.h>
+
 
 
 @interface Player : NSObject
