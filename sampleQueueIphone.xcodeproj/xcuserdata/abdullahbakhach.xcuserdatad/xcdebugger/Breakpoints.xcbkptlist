@@ -8,12 +8,25 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "sampleQueueIphone/AppDelegate.m"
-         timestampString = "368610399.993288"
+         timestampString = "369989351.964256"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "210"
-         endingLineNumber = "210"
-         landmarkName = "-readPackets"
+         startingLineNumber = "114"
+         endingLineNumber = "114"
+         landmarkName = "-getTrackNativeSettings:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "sampleQueueIphone/AppDelegate.m"
+         timestampString = "370531587.222272"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "459"
+         endingLineNumber = "459"
+         landmarkName = "-enqueueBuffer"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>
