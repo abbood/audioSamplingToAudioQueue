@@ -27,13 +27,44 @@
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {
+    @synchronized(self)
+    {
+
+        inuse[fillBufferIndex] = true;		// set in use flag
+        buffersUsed++;
+
+        // enqueue buffer
+        AudioQueueBufferRef fillBuf = audioQueueBuffers[fillBufferIndex];
+        fillBuf->mAudioDataByteSize = bytesFilled;
+
+
+        /*NSData *bufContent = [NSData dataWithBytes:fillBuf->mAudioData length:fillBuf->mAudioDataByteSize];
+        NSLog(@"we are enquing the queue with buffer (length: %lu) %@",fillBuf->mAudioDataByteSize,bufContent);
+        NSLog(@"\n\n\n");
+        NSLog(@":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::");*/
+
+		if (packetsFilled)
+		{
+    /*        NSLog(@"\n\n\n\n\n\n");
+            NSLog(@":::::: we are enqueuing buffer with %zu packtes!",packetsFilled);
+            NSLog(@"buffer data is %@",[NSData dataWithBytes:fillBuf->mAudioData length:fillBuf->mAudioDataByteSize]);
+
+            for (int i = 0; i < packetsFilled; i++)
+            {
+                NSLog(@"\THIS IS THE PACKET WE ARE COPYING TO AUDIO BUFFER----------------\n");
+                NSLog(@"this is packetDescriptionArray.mStartOffset: %lld", packetDescs[i].mStartOffset);
+                NSLog(@"this is packetDescriptionArray.mVariableFramesInPacket: %lu", packetDescs[i].mVariableFramesInPacket);
+                NSLog(@"this is packetDescriptionArray[.mDataByteSize: %lu", packetDescs[i].mDataByteSize);
+                NSLog(@"\n----------------\n");
+            }
+            */
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
+    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
 }
 
