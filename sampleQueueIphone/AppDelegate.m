@@ -412,7 +412,7 @@ cleanup:
         
 		if (packetsFilled)
 		{
-            NSLog(@"\n\n\n\n\n\n");
+    /*        NSLog(@"\n\n\n\n\n\n");
             NSLog(@":::::: we are enqueuing buffer with %zu packtes!",packetsFilled);
             NSLog(@"buffer data is %@",[NSData dataWithBytes:fillBuf->mAudioData length:fillBuf->mAudioDataByteSize]);
             
@@ -424,7 +424,7 @@ cleanup:
                 NSLog(@"this is packetDescriptionArray[.mDataByteSize: %lu", packetDescs[i].mDataByteSize);        
                 NSLog(@"\n----------------\n");                                               
             }
-            
+            */
 
                         
 			err = AudioQueueEnqueueBuffer(queue, fillBuf, packetsFilled, packetDescs);
