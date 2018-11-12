@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		335C08C521998E75009DE1B1 /* HelloWorld.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335C08C421998E75009DE1B1 /* HelloWorld.swift */; };
 		D771254D15F5D73000225985 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D771254C15F5D73000225985 /* AVFoundation.framework */; };
 		D771255015F5D8E500225985 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D771254F15F5D8E500225985 /* CoreMedia.framework */; };
 		D771255215F5D95400225985 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D771255115F5D95400225985 /* AudioToolbox.framework */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		335C08C421998E75009DE1B1 /* HelloWorld.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloWorld.swift; sourceTree = "<group>"; };
 		D771254C15F5D73000225985 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		D771254F15F5D8E500225985 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		D771255115F5D95400225985 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -102,6 +104,7 @@
 				D771257415F60AB600225985 /* Player.m */,
 				D7A036F115F5D65400B98E91 /* ViewController.xib */,
 				D7A036E315F5D65300B98E91 /* Supporting Files */,
+				335C08C421998E75009DE1B1 /* HelloWorld.swift */,
 			);
 			path = sampleQueueIphone;
 			sourceTree = "<group>";
@@ -145,6 +148,11 @@
 			attributes = {
 				LastUpgradeCheck = 0430;
 				ORGANIZATIONNAME = Amazon;
+				TargetAttributes = {
+					D7A036D715F5D65300B98E91 = {
+						LastSwiftMigration = 1000;
+					};
+				};
 			};
 			buildConfigurationList = D7A036D215F5D65300B98E91 /* Build configuration list for PBXProject "sampleQueueIphone" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -180,6 +188,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				335C08C521998E75009DE1B1 /* HelloWorld.swift in Sources */,
 				D7A036E915F5D65300B98E91 /* main.m in Sources */,
 				D7A036ED15F5D65300B98E91 /* AppDelegate.m in Sources */,
 				D7A036F015F5D65400B98E91 /* ViewController.m in Sources */,
@@ -257,10 +266,14 @@
 		D7A036F715F5D65400B98E91 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "sampleQueueIphone/sampleQueueIphone-Prefix.pch";
 				INFOPLIST_FILE = "sampleQueueIphone/sampleQueueIphone-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -268,10 +281,13 @@
 		D7A036F815F5D65400B98E91 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "sampleQueueIphone/sampleQueueIphone-Prefix.pch";
 				INFOPLIST_FILE = "sampleQueueIphone/sampleQueueIphone-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
